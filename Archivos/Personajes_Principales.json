@@ -1,0 +1,20 @@
+{
+  "Datos": {
+    "Nombre": "Andy",
+    "Apodo": "Defender",
+    "Fechanac": "1997-10-10T00:00:00",
+    "Edad": 25
+  },
+  "Atributos": {
+    "Caption": "        \r\n                \\  @\r\n                 \\/█|▒▒|\r\n                 _/ \\_",
+    "Tipo": "Guerrero",
+    "Inteligencia": 10,
+    "Destreza": 20,
+    "Fuerza": 30,
+    "Nivel": 1,
+    "Defensa": 302,
+    "Ataque": 312,
+    "Salud": 1320,
+    "Mana": 360
+  }
+}
