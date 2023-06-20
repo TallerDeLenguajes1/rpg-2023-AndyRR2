@@ -6,13 +6,19 @@ using System.IO;
 using EspacioPersonaje;
 using EspacioEnemigos;
 using System.Collections.Generic;
-
+using EspacioConstantes;
 
 public class PersonajesJson
 {
     public bool ExisteArch(string NombArch){
-        if(File.Exists(NombArch)){
-            return(true);
+        string ruta = "Archivos/"+NombArch+".json";
+        if(File.Exists(ruta)){
+            string Contenido = File.ReadAllText(ruta);
+            if (!string.IsNullOrEmpty(Contenido)){
+                return(true);    
+            }else{
+                return(false);
+            }
         }else{
             return(false);
         }
@@ -71,5 +77,30 @@ public class PersonajesJson
         }
         var ListEnem = JsonSerializer.Deserialize<List<Enemigos>>(Leido); 
         return(ListEnem);     
+    }
+    public void GuardarConstantes(Constantes cons, string NombArch){
+        string ruta = "Archivos/" + NombArch + ".json";
+        FileStream archivo = new FileStream(ruta,FileMode.Create); 
+        StreamWriter sw = new StreamWriter(archivo);
+        JsonSerializerOptions options = new JsonSerializerOptions{
+            WriteIndented = true,
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping 
+        };
+        var serializado = JsonSerializer.Serialize(cons,options);
+        using(sw){
+            sw.WriteLine("{0}",serializado);
+            sw.Close();  
+        }
+    }
+    public Constantes LeerConstantes(string ruta){
+        string Leido;
+        FileStream archivo = new FileStream(ruta,FileMode.Open);
+        StreamReader sr = new StreamReader(archivo);
+        using (sr){
+            Leido = sr.ReadToEnd();
+            sr.Close();
+        }
+        var cons = JsonSerializer.Deserialize<Constantes>(Leido);
+        return(cons);
     }
 }

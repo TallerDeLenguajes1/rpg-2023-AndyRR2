@@ -15,9 +15,9 @@ public class Enemigos{
     
     public class atributos{
         private string caption;
-        private int nivel;
+        private int nivel=1;
         private int defensa=100;
-        private int ataque=100;
+        private int ataque=300;
         private int salud=1000;
         
         public string Caption { get => caption; set => caption = value; }

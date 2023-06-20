@@ -3,6 +3,7 @@ using System;
 using EspacioPersonaje;
 using EspacioEnemigos;
 using EspacioConstantes;
+using EspacioMecanicas;
 public class FabricaPersonaje{
     public Personaje CrearPersonaje(Personaje Pj){
         string entrada="",fech;
@@ -82,37 +83,30 @@ public class FabricaPersonaje{
             case 1: Pj.Atributos.Fuerza = 30;Pj.Atributos.Destreza=20;Pj.Atributos.Inteligencia=10;Pj.Atributos.Tipo="Guerrero";
                     Pj.Atributos.Caption = @"        
                 \  @
-                 \/█|▒▒|
+                 \/█|██|
                  _/ \_";
             break;
             case 2: Pj.Atributos.Fuerza = 10;Pj.Atributos.Destreza=20;Pj.Atributos.Inteligencia=30;Pj.Atributos.Tipo="Mago";
             Pj.Atributos.Caption = @"       
                      ▄
                  \Ô__|
-                 /▓\ |
+                 /█\ |
                  ! !"
             ;break;
             case 3: Pj.Atributos.Fuerza = 10;Pj.Atributos.Destreza=30;Pj.Atributos.Inteligencia=20;Pj.Atributos.Tipo="Asesino";
             Pj.Atributos.Caption = @"    
                    Ø/\,
-                 \/║
+                 \/█
                  _/ \_"
             ;break;
         }
         return(Pj);
     }
-    public Personaje ActualizarValores(Personaje Pj, int nivel){
-        Pj.Atributos.Nivel = nivel;
-        Pj.Atributos.Salud = Pj.Atributos.Salud + Pj.Atributos.Fuerza*10 + Pj.Atributos.Nivel*20;
-        Pj.Atributos.Mana = Pj.Atributos.Mana + Pj.Atributos.Inteligencia*5 +Pj.Atributos.Nivel*10;
-        Pj.Atributos.Ataque = Pj.Atributos.Ataque + Pj.Atributos.Destreza*5 + Pj.Atributos.Fuerza*3 + Pj.Atributos.Inteligencia*2 + Pj.Atributos.Nivel*2;
-        Pj.Atributos.Defensa = Pj.Atributos.Defensa +Pj.Atributos.Fuerza*5 +Pj.Atributos.Destreza*2 + Pj.Atributos.Inteligencia + Pj.Atributos.Nivel*2;
-        return(Pj);
-    }
     public Enemigos GenerarEnemigo(Enemigos Enem, int nivel){
         Constantes Const = new Constantes(); 
-        Enem.Datos.Tipo = Const.monstruo[Const.GeneraAleatorio(1,3)];
-        Enem.Datos.Nombre = Enem.Datos.Tipo + " " + Const.nombres[Const.GeneraAleatorio(1,10)];
+        Mecanicas Mec = new Mecanicas();
+        Enem.Datos.Tipo = Const.monstruo[Mec.GeneraAleatorio(1,3)];
+        Enem.Datos.Nombre = Enem.Datos.Tipo + " " + Const.nombres[Mec.GeneraAleatorio(1,10)];
         Enem.Atributos.Nivel = nivel;
         switch (Enem.Datos.Tipo){
             case "Dragon":
@@ -157,17 +151,6 @@ public class FabricaPersonaje{
         }
         return(Enem);
     } 
-    public Enemigos ActualizarValores(Enemigos Enem, int nivel){
-        Enem.Atributos.Nivel = nivel;
-        Enem.Atributos.Salud = Enem.Atributos.Salud + Enem.Atributos.Nivel*100;
-        Enem.Atributos.Ataque = Enem.Atributos.Ataque + Enem.Atributos.Nivel*15;
-        Enem.Atributos.Defensa = Enem.Atributos.Defensa + Enem.Atributos.Nivel*5;
-        return(Enem);
-    }
-    public List<Enemigos> DestruirEnemigo(List<Enemigos> ListEnem,Enemigos Enem){
-        ListEnem.Remove(Enem);
-        return(ListEnem);
-    }
     public int CalcEdad(DateTime fecha){
         int Edad;
         DateTime hoy = DateTime.Today;

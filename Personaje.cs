@@ -24,6 +24,7 @@ public class Personaje{
         private int ataque=100;
         private int salud=1000;
         private int mana=300;
+        private int exp=0;
         
         public string Caption { get => caption; set => caption = value; }
         public string Tipo { get => tipo; set => tipo = value; }
@@ -35,5 +36,6 @@ public class Personaje{
         public int Ataque { get => ataque; set => ataque = value; }
         public int Salud { get => salud; set => salud = value; }
         public int Mana { get => mana; set => mana = value; }
+        public int Exp { get => exp; set => exp = value; }
     }
 }

@@ -1,12 +1,12 @@
 {
   "Datos": {
-    "Nombre": "Andy",
-    "Apodo": "Defender",
-    "Fechanac": "1997-10-10T00:00:00",
-    "Edad": 25
+    "Nombre": "1",
+    "Apodo": "1",
+    "Fechanac": "2000-01-01T00:00:00",
+    "Edad": 23
   },
   "Atributos": {
-    "Caption": "        \r\n                \\  @\r\n                 \\/█|▒▒|\r\n                 _/ \\_",
+    "Caption": "        \r\n                \\  @\r\n                 \\/█|██|\r\n                 _/ \\_",
     "Tipo": "Guerrero",
     "Inteligencia": 10,
     "Destreza": 20,
@@ -15,6 +15,7 @@
     "Defensa": 302,
     "Ataque": 312,
     "Salud": 1320,
-    "Mana": 360
+    "Mana": 360,
+    "Exp": 0
   }
 }
