@@ -4,30 +4,18 @@ using EspacioPersonaje;
 using EspacioEnemigos;
 
 public class Pantallas{
-    public void SubisteDeNivel(Personaje Pj){
-        Console.WriteLine("!Subiste de nivel¡");
-        Console.WriteLine("Enter para continuar...");
+    public void MensajeInicial(){
+        Console.WriteLine("\n");
+        Console.WriteLine("╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+        Console.WriteLine("║-Este juego consiste en elegir una clase de personaje la cual tendra diferentes atributos respectivamente.                                 ║"); 
+        Console.WriteLine("║-Se generan 10 enemigos de tres tipos diferentes aleatoriamente y se combate con cada uno de los enemigos uno por uno.                     ║");
+        Console.WriteLine("║-Si un enemigo muere, el siguiente tendra un nivel mayor por lo tanto mejores estadisticas.                                                ║"); 
+        Console.WriteLine("║-Si el jugador mata suficientes enemigos subira de nivel, aumenta sus estadisticas y tendra la opcion de mejorar sus atributos a eleccion. ║"); 
+        Console.WriteLine("║-Ganas si derrotas todos los enemigos.                                                                                                     ║");
+        Console.WriteLine("╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+        Console.WriteLine("\n");
+        Console.WriteLine("Presione Enter para continuar.\n");
         Console.ReadLine();
-        int cant=3, opcion=0;
-        Console.WriteLine("Tienes 3 puntos de Atributos para gastar.");
-        while (cant!=0){
-            Console.WriteLine("1-Gastar en Fuerza");
-            Console.WriteLine("2-Gastar en Destreza");
-            Console.WriteLine("3-Gastar en Inteligencia");
-            string entrada = Console.ReadLine();
-            bool result = int.TryParse(entrada,out opcion);
-            while (!result || (opcion!=1&&opcion!=2&&opcion!=3)){
-                Console.WriteLine("Opcion no valida.");
-                Console.WriteLine("Seleccione otra opcion:");
-            }
-            switch (opcion){
-                case 1:Pj.Atributos.Fuerza += 1;break;
-                case 2:Pj.Atributos.Destreza += 1;break;
-                case 3:Pj.Atributos.Inteligencia += 1;break;
-            }
-            cant--;
-            Console.WriteLine("Le quedan {0} puntos de Atributos para gastar.",cant);
-        }
     }
     public void PantallaPrincipal(){
         Console.WriteLine("           ╔════════+════════╗");
@@ -68,11 +56,6 @@ public class Pantallas{
         Console.WriteLine(" ╚══════════════════════════════════════╝");
         Console.WriteLine("\n");
     }
-    public void Empezar(){
-        Console.WriteLine("     ╔══════════════════════════════╗");
-        Console.WriteLine("     ║ Precione Enter para comenzar ║");
-        Console.WriteLine("     ╚══════════════════════════════╝");
-    }
     public void PantallaMazmorra(Personaje Pj, Enemigos Enem, int pv, int pm, int Epv){
         int costo1 = pm*35/100;
         int costo2 = pm*20/100;
@@ -84,16 +67,135 @@ public class Pantallas{
         Console.WriteLine(Enem.Atributos.Caption.PadLeft(10)+ " ");
         Console.WriteLine("-----------------------------------------------------");
         Console.WriteLine(Pj.Atributos.Caption.PadRight(10) + "   ");
-        Console.WriteLine("╔══════════════════════════════════════════════════════╗");
-        Console.WriteLine("║ ╔══════════════╗     ╔══════════════╗  Nivel: "+Pj.Atributos.Nivel.ToString().PadRight(3)+"    ║");
-        Console.WriteLine("║ ║ 1-Atacar     ║     ║ 3-Escapar    ║  "+Pj.Datos.Apodo.PadRight(10)+"    ║");
-        Console.WriteLine("║ ╚══════════════╝     ╚══════════════╝                ║");
-        Console.WriteLine("║ ╔══════════════╗     ╔══════════════╗  PV: "+Pj.Atributos.Salud.ToString().PadRight(4)+"/"+pv.ToString().PadRight(4)+" ║");
-        Console.WriteLine("║ ║ 2-Poder      ║     ║ 4-Curarse    ║                ║");
-        Console.WriteLine("║ ║ Costo: "+costo1.ToString().PadRight(3)+"PM ║     ║ Costo: "+costo2.ToString().PadRight(3)+"PM ║  PM: "+Pj.Atributos.Mana.ToString().PadRight(4)+"/"+pm.ToString().PadRight(4)+" ║");
-        Console.WriteLine("║ ║ Daño : "+danio.ToString().PadRight(4) + "  ║     ║ Cura: "+((pv*30)/100).ToString().PadRight(4)+"PV ║                ║");
-        Console.WriteLine("║ ╚══════════════╝     ╚══════════════╝                ║");
-        Console.WriteLine("╚══════════════════════════════════════════════════════╝");
+        Console.WriteLine("╔════════════════════════════════════════════════════════╗");
+        Console.WriteLine("║ ╔═══════════════╗     ╔═══════════════╗  "+Pj.Datos.Apodo.PadRight(10)+"    ║");
+        Console.WriteLine("║ ║ 1-Atacar      ║     ║ 3-Escapar     ║  Nivel: "+Pj.Atributos.Nivel.ToString().PadRight(3)+"    ║");
+        Console.WriteLine("║ ╚═══════════════╝     ╚═══════════════╝                ║");
+        Console.WriteLine("║ ╔═══════════════╗     ╔═══════════════╗  PV: "+Pj.Atributos.Salud.ToString().PadRight(4)+"/"+pv.ToString().PadRight(4)+" ║");
+        Console.WriteLine("║ ║ 2-Poder       ║     ║ 4-Curarse     ║                ║");
+        Console.WriteLine("║ ║ Costo: "+costo1.ToString().PadRight(4)+"PM ║     ║ Costo: "+costo2.ToString().PadRight(4)+"PM ║  PM: "+Pj.Atributos.Mana.ToString().PadRight(4)+"/"+pm.ToString().PadRight(4)+" ║");
+        Console.WriteLine("║ ║ Daño : "+danio.ToString().PadRight(4) + "   ║     ║ Cura: "+((pv*30)/100).ToString().PadRight(4)+"PV  ║                ║");
+        Console.WriteLine("║ ╚═══════════════╝     ╚═══════════════╝                ║");
+        Console.WriteLine("╚════════════════════════════════════════════════════════╝");
+    }
+    public void EntrasAlNivel(){
+        Console.WriteLine("   ╔══════════════════════════════════╗");
+        Console.WriteLine("   ║ Entras a una Mazmorra misteriosa ║");
+        Console.WriteLine("   ╚══════════════════════════════════╝");
+    }
+    public void AparecenEnemigos(){
+        Console.WriteLine("         ╔══════════════════════╗");
+        Console.WriteLine("         ║ Hay Monstruos dentro ║");
+        Console.WriteLine("         ╚══════════════════════╝");
+        Console.WriteLine("          ╔════════════════════╗");
+        Console.WriteLine("          ║ Lucha por tu vida. ║");
+        Console.WriteLine("          ╚════════════════════╝");
+    }
+    public void EnemigoAbatido(string tipo){
+        Console.WriteLine("   Enemigo abatido");
+        switch (tipo){
+                        case "Dragon":
+                        Console.WriteLine(@"
+                                         /\_   ___/\/\/\/\/\
+                                        / ° \  \    o  ///  
+                                        vvvvv    ¨¨\  \\\ D_D_D
+                                        vvvvv.    ./ /_/_/_/_
+                                        \______\   \__/
+                        ");break;
+                        case "No Muerto":
+                        Console.WriteLine(@"
+                                              _/_/_/_/_
+                                        |__\   \        |
+                                         _°|\   \      _|
+                                         \   \   \   _/_______
+                                          nn¨¨\   \___\__|__|_
+                                            nn..   \//
+                                            \___/
+                        ");break;
+                        case "Demonio":
+                        Console.WriteLine(@"
+                                               /\      /\
+                                       _      / /      \ \
+                                      /  \    \ \______/ /\
+                                      \ o \    \   o  /_/ /
+                                      / .. \    \       __\___ 
+                                      \VVVVV\    \ VVV\/   / /
+                                           |_\    \ __|  __\_\_
+                                         /VVV \    \VV\ /    
+                                         \_____\    \__/
+                        ");break;
+                    }
+    }
+    public Personaje PjAbatido(Personaje pj){
+        switch (pj.Atributos.Tipo){
+            case "Guerrero": 
+            pj.Atributos.Caption=@" 
+                  ¨ ''            
+                  /█\ 
+            ____ _/ \_ |██| @
+            ";break;
+            case "Mago":
+            pj.Atributos.Caption=@"
+              ¨ ''
+              /█\ 
+            Ô ! !  _____▄
+            ";break;
+            case "Asesino":
+            pj.Atributos.Caption=@"
+                ¨ ''  
+                /█\
+            __ _/ \_ Ø __,
+            ";break;
+        }
+        Console.WriteLine(pj.Atributos.Caption);
+        return(pj);
+    }
+    public void SubisteDeNivel(Personaje Pj){
+        string entrada;
+        bool result=false;
+        Console.WriteLine("+++Subiste de nivel+++");
+        Console.WriteLine("Enter para continuar...");
+        Console.ReadLine();
+        int cant=3, opcion=0;
+        Console.WriteLine("Tienes 3 puntos de Atributos para gastar.");
+        while (cant!=0){
+            Console.WriteLine("1-Gastar en Fuerza");
+            Console.WriteLine("2-Gastar en Destreza");
+            Console.WriteLine("3-Gastar en Inteligencia");
+            entrada = Console.ReadLine();
+            result = int.TryParse(entrada,out opcion);
+            while (!result || (opcion!=1&&opcion!=2&&opcion!=3)){
+                Console.WriteLine("Opcion no valida.");
+                Console.WriteLine("Seleccione otra opcion:");
+                entrada = Console.ReadLine();
+                result = int.TryParse(entrada,out opcion);
+            }
+            switch (opcion){
+                case 1:Pj.Atributos.Fuerza += 1;break;
+                case 2:Pj.Atributos.Destreza += 1;break;
+                case 3:Pj.Atributos.Inteligencia += 1;break;
+            }
+            cant--;
+            Console.WriteLine("Le quedan {0} puntos de Atributos para gastar.",cant);
+        }
+    }
+    public void Ganaste(){
+        Console.WriteLine("              ╔═══════════╗");
+        Console.WriteLine("              ║ !Ganaste¡ ║");
+        Console.WriteLine("              ╚═══════════╝");
+    }
+    public void Perdiste(){
+        Console.WriteLine("         ╔════════════════════╗");
+        Console.WriteLine("         ║ Tu Salud llego a 0 ║");
+        Console.WriteLine("         ╚════════════════════╝");
+        Console.WriteLine("             ╔═════════════╗");
+        Console.WriteLine("             ║ Has Muerto. ║");
+        Console.WriteLine("             ╚═════════════╝");
+    }
+    public void Fin(){
+        Console.WriteLine("            ╔═══════════════╗");
+        Console.WriteLine("            ║ Fin del Juego ║");
+        Console.WriteLine("            ╚═══════════════╝");
     }
     public void MostrarEnemigo(Enemigos Enem){
         Console.WriteLine(" @════════<<<<══════vvvv══════>>>>════════@");

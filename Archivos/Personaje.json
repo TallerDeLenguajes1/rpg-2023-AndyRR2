@@ -1,0 +1,21 @@
+{
+  "Datos": {
+    "Nombre": "g",
+    "Apodo": "g",
+    "Fechanac": "2000-01-01T00:00:00",
+    "Edad": 23
+  },
+  "Atributos": {
+    "Caption": " \r\n                  ¨ ''            \r\n                  /█\\ \r\n            ____ _/ \\_ |██| @\r\n            ",
+    "Tipo": "Guerrero",
+    "Inteligencia": 10,
+    "Destreza": 20,
+    "Fuerza": 30,
+    "Nivel": 1,
+    "Defensa": 540,
+    "Ataque": 490,
+    "Salud": 0,
+    "Mana": 0,
+    "Exp": 1100
+  }
+}

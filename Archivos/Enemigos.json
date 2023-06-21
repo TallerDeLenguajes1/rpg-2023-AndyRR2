@@ -1,90 +1,25 @@
 [
   {
     "Datos": {
-      "Tipo": "Dragon",
-      "Nombre": "Dragon del Inframundo"
-    },
-    "Atributos": {
-      "Caption": "    \r\n                 /\\____/\\/\\/\\/\\/\\\r\n                / °    o  ///  \r\n                vvvvv¨¨\\  \\\\\\ D_D_D\r\n                vvvvv../ /_/_/_/_\r\n                \\________/",
-      "Nivel": 1,
-      "Defensa": 105,
-      "Ataque": 110,
-      "Salud": 1100
-    }
-  },
-  {
-    "Datos": {
       "Tipo": "No Muerto",
-      "Nombre": "No Muerto Ejecutador"
+      "Nombre": "No Muerto de Sangre"
     },
     "Atributos": {
       "Caption": "\r\n                _/_/_/_/_\r\n               |__      |\r\n                _°|    _|\r\n                \\    _/_______\r\n                 nn¨¨\\\\__|__|_\r\n                 nn..//\r\n                 \\___/",
-      "Nivel": 1,
-      "Defensa": 95,
-      "Ataque": 90,
-      "Salud": 900
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Dragon",
-      "Nombre": "Dragon Oscuro"
-    },
-    "Atributos": {
-      "Caption": "    \r\n                 /\\____/\\/\\/\\/\\/\\\r\n                / °    o  ///  \r\n                vvvvv¨¨\\  \\\\\\ D_D_D\r\n                vvvvv../ /_/_/_/_\r\n                \\________/",
-      "Nivel": 1,
-      "Defensa": 105,
-      "Ataque": 110,
-      "Salud": 1100
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Dragon",
-      "Nombre": "Dragon Ejecutador"
-    },
-    "Atributos": {
-      "Caption": "    \r\n                 /\\____/\\/\\/\\/\\/\\\r\n                / °    o  ///  \r\n                vvvvv¨¨\\  \\\\\\ D_D_D\r\n                vvvvv../ /_/_/_/_\r\n                \\________/",
-      "Nivel": 1,
-      "Defensa": 105,
-      "Ataque": 110,
-      "Salud": 1100
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "No Muerto",
-      "Nombre": "No Muerto Antiguo"
-    },
-    "Atributos": {
-      "Caption": "\r\n                _/_/_/_/_\r\n               |__      |\r\n                _°|    _|\r\n                \\    _/_______\r\n                 nn¨¨\\\\__|__|_\r\n                 nn..//\r\n                 \\___/",
-      "Nivel": 1,
-      "Defensa": 95,
-      "Ataque": 90,
-      "Salud": 900
+      "Nivel": 2,
+      "Defensa": 195,
+      "Ataque": 230,
+      "Salud": 2400
     }
   },
   {
     "Datos": {
       "Tipo": "Demonio",
-      "Nombre": "Demonio de Sangre"
+      "Nombre": "Demonio Incendiario"
     },
     "Atributos": {
       "Caption": "\r\n                 /\\      /\\\r\n               _/ /      \\ \\\r\n              / \\ \\______/ /\\\r\n              \\ o    o  /_/ /\r\n              / ..       __ \\___ \r\n              \\VVVVVVVV\\/   / /\r\n                   |___|  __\\_\\_\r\n                 /VVVVV\\ /    \r\n                 \\______/",
-      "Nivel": 1,
-      "Defensa": 85,
-      "Ataque": 100,
-      "Salud": 1000
-    }
-  },
-  {
-    "Datos": {
-      "Tipo": "Demonio",
-      "Nombre": "Demonio del Abismo"
-    },
-    "Atributos": {
-      "Caption": "\r\n                 /\\      /\\\r\n               _/ /      \\ \\\r\n              / \\ \\______/ /\\\r\n              \\ o    o  /_/ /\r\n              / ..       __ \\___ \r\n              \\VVVVVVVV\\/   / /\r\n                   |___|  __\\_\\_\r\n                 /VVVVV\\ /    \r\n                 \\______/",
-      "Nivel": 1,
+      "Nivel": 2,
       "Defensa": 85,
       "Ataque": 100,
       "Salud": 1000
@@ -97,7 +32,7 @@
     },
     "Atributos": {
       "Caption": "    \r\n                 /\\____/\\/\\/\\/\\/\\\r\n                / °    o  ///  \r\n                vvvvv¨¨\\  \\\\\\ D_D_D\r\n                vvvvv../ /_/_/_/_\r\n                \\________/",
-      "Nivel": 1,
+      "Nivel": 2,
       "Defensa": 105,
       "Ataque": 110,
       "Salud": 1100
@@ -106,11 +41,11 @@
   {
     "Datos": {
       "Tipo": "Dragon",
-      "Nombre": "Dragon de Sangre"
+      "Nombre": "Dragon Fantasmal"
     },
     "Atributos": {
       "Caption": "    \r\n                 /\\____/\\/\\/\\/\\/\\\r\n                / °    o  ///  \r\n                vvvvv¨¨\\  \\\\\\ D_D_D\r\n                vvvvv../ /_/_/_/_\r\n                \\________/",
-      "Nivel": 1,
+      "Nivel": 2,
       "Defensa": 105,
       "Ataque": 110,
       "Salud": 1100
@@ -118,15 +53,67 @@
   },
   {
     "Datos": {
+      "Tipo": "Dragon",
+      "Nombre": "Dragon Gelido"
+    },
+    "Atributos": {
+      "Caption": "    \r\n                 /\\____/\\/\\/\\/\\/\\\r\n                / °    o  ///  \r\n                vvvvv¨¨\\  \\\\\\ D_D_D\r\n                vvvvv../ /_/_/_/_\r\n                \\________/",
+      "Nivel": 2,
+      "Defensa": 105,
+      "Ataque": 110,
+      "Salud": 1100
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "No Muerto",
+      "Nombre": "No Muerto del Abismo"
+    },
+    "Atributos": {
+      "Caption": "\r\n                _/_/_/_/_\r\n               |__      |\r\n                _°|    _|\r\n                \\    _/_______\r\n                 nn¨¨\\\\__|__|_\r\n                 nn..//\r\n                 \\___/",
+      "Nivel": 2,
+      "Defensa": 95,
+      "Ataque": 90,
+      "Salud": 900
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "No Muerto",
+      "Nombre": "No Muerto Incendiario"
+    },
+    "Atributos": {
+      "Caption": "\r\n                _/_/_/_/_\r\n               |__      |\r\n                _°|    _|\r\n                \\    _/_______\r\n                 nn¨¨\\\\__|__|_\r\n                 nn..//\r\n                 \\___/",
+      "Nivel": 2,
+      "Defensa": 95,
+      "Ataque": 90,
+      "Salud": 900
+    }
+  },
+  {
+    "Datos": {
       "Tipo": "Demonio",
-      "Nombre": "Demonio del Inframundo"
+      "Nombre": "Demonio Antiguo"
     },
     "Atributos": {
       "Caption": "\r\n                 /\\      /\\\r\n               _/ /      \\ \\\r\n              / \\ \\______/ /\\\r\n              \\ o    o  /_/ /\r\n              / ..       __ \\___ \r\n              \\VVVVVVVV\\/   / /\r\n                   |___|  __\\_\\_\r\n                 /VVVVV\\ /    \r\n                 \\______/",
-      "Nivel": 1,
+      "Nivel": 2,
       "Defensa": 85,
       "Ataque": 100,
       "Salud": 1000
+    }
+  },
+  {
+    "Datos": {
+      "Tipo": "Dragon",
+      "Nombre": "Dragon Oscuro"
+    },
+    "Atributos": {
+      "Caption": "    \r\n                 /\\____/\\/\\/\\/\\/\\\r\n                / °    o  ///  \r\n                vvvvv¨¨\\  \\\\\\ D_D_D\r\n                vvvvv../ /_/_/_/_\r\n                \\________/",
+      "Nivel": 2,
+      "Defensa": 105,
+      "Ataque": 110,
+      "Salud": 1100
     }
   }
 ]

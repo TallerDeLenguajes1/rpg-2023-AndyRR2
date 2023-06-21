@@ -6,11 +6,10 @@ using EspacioConstantes;
 using EspacioMecanicas;
 public class FabricaPersonaje{
     public Personaje CrearPersonaje(Personaje Pj){
-        string entrada="",fech;
+        string entrada,fech;
         bool result;
-        int dia, mes, year;
+        int dia, mes, year, clase;
         DateTime fecha;
-        int clase;
         entrada = Console.ReadLine();
         result = int.TryParse(entrada,out clase);
         while (!result || (clase!=1 && clase!=2 && clase!=3)){
@@ -22,6 +21,16 @@ public class FabricaPersonaje{
         //entrar nombre
         Console.WriteLine("Entre nombre: ");
         entrada = Console.ReadLine();
+        while (!EsPalabra(entrada)){
+            Console.WriteLine("El nombre no puede contener números o caracteres especiales.");
+            Console.WriteLine("Entre nombre:");
+            entrada = Console.ReadLine();
+        }
+        while (entrada==""){
+            Console.WriteLine("El nombre no puede estar vacio.");
+            Console.WriteLine("Entre nombre:");
+            entrada = Console.ReadLine();
+        }
         while (entrada.Length>10){
             Console.WriteLine("El tamaño del nombre solo admite 10 caracteres.");
             Console.WriteLine("Entre nombre: ");
@@ -32,6 +41,16 @@ public class FabricaPersonaje{
         //entrar apodo
         Console.WriteLine("Entre apodo: ");
         entrada = Console.ReadLine();
+        while (!EsPalabra(entrada)){
+            Console.WriteLine("El apodo no puede contener números o caracteres especiales.");
+            Console.WriteLine("Entre apodo:");
+            entrada = Console.ReadLine();
+        }
+        while (entrada==""){
+            Console.WriteLine("El apodo no puede estar vacio.");
+            Console.WriteLine("Entre nombre:");
+            entrada = Console.ReadLine();
+        }
         while (entrada.Length>10){
             Console.WriteLine("El tamaño del apodo solo admite 10 caracteres.");
             Console.WriteLine("Entre apodo: ");
@@ -45,7 +64,7 @@ public class FabricaPersonaje{
         entrada = Console.ReadLine();
         result = int.TryParse(entrada, out dia);
         while (!result || dia<0 || dia>31){
-            Console.WriteLine("El dia entrado no es compatible");
+            Console.WriteLine("El dia entrado no es valido");
             Console.WriteLine("Dia: ");
             entrada = Console.ReadLine();
             result = int.TryParse(entrada, out dia);
@@ -56,7 +75,7 @@ public class FabricaPersonaje{
         entrada = Console.ReadLine();
         result = int.TryParse(entrada, out mes);
         while (!result || mes<0 || mes>12){
-            Console.WriteLine("El mes entrado no es compatible");
+            Console.WriteLine("El mes entrado no es valido");
             Console.WriteLine("Mes: ");
             entrada = Console.ReadLine();
             result = int.TryParse(entrada, out mes);
@@ -67,7 +86,7 @@ public class FabricaPersonaje{
         entrada = Console.ReadLine();
         result = int.TryParse(entrada, out year);
         while (!result || year<1920 || year>2023){
-            Console.WriteLine("El año entrado no es compatible");
+            Console.WriteLine("El año entrado no es valido");
             Console.WriteLine("Año: ");
             entrada = Console.ReadLine();
             result = int.TryParse(entrada, out year);
@@ -151,7 +170,7 @@ public class FabricaPersonaje{
         }
         return(Enem);
     } 
-    public int CalcEdad(DateTime fecha){
+    public static int CalcEdad(DateTime fecha){
         int Edad;
         DateTime hoy = DateTime.Today;
         Edad = hoy.Year - fecha.Year;
@@ -160,7 +179,18 @@ public class FabricaPersonaje{
         }
         return(Edad);
     }
+    public static bool EsPalabra(string palabra){
+        foreach (char letra in palabra){
+            if (!char.IsLetterOrDigit(letra)){
+                return(false);
+            }else if (char.IsDigit(letra)){
+                    return(false);
+            }
+        }
+        return(true);
+    }
 }
+
 
 
 
