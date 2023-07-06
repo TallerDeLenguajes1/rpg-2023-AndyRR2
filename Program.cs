@@ -6,11 +6,17 @@ using EspacioEnemigos;
 using EspacioPersonajesJson;
 using EspacioMecanicas;
 using EspacioConstantes;
+using EspacioTomarApi;
+
 public class Program{
     private static void Main(){
         string entrada;
         bool flag = true;
         Personaje PjPrincipal;
+
+        TomarApi tomaApi = new TomarApi();
+        tomaApi.ObtenerItem();
+        
 
     //Instaciacion de clases a usar----------------------------------------------------------------------------------
         Pantallas print = new Pantallas();//para mostrar por pantalla lo necesario
@@ -126,7 +132,6 @@ public class Program{
                 }
                 
                 //print.MostrarEnemigo(ListaEnemigos[0]);
-                
                 print.PantallaMazmorra(PjPrincipal,ListaEnemigos[0],cons.Valores.PjPvMaximo,cons.Valores.PjPmMaximo,cons.Valores.EnemPvMaximo);//muestra pantalla de combate 
                 string entrada2 = Console.ReadLine();
                 result = int.TryParse(entrada2, out opcion2);
@@ -194,7 +199,7 @@ public class Program{
                         Console.ReadLine();
                         PjPrincipal = mec.RestarPvPersonaje(ListaEnemigos[0], PjPrincipal);//ejecuta ataque enemigo
                     }
-                //turno enemigo-fin-----------------------------------------------------------------------------------    
+                //turno enemigo-fin-----------------------------------------------------------------------------------   
                 }
                 pers.GuardarPjPrincipal(PjPrincipal,"Personaje");//guarda el personaje al final de la ronda en archivo json 
                 pers.GuardarEnemigo(ListaEnemigos,"Enemigos");//se guarda la nueva lista de enemigos el final de la ronda en archivo json 

@@ -26,7 +26,7 @@ public class FabricaPersonaje{
             Console.WriteLine("Entre nombre:");
             entrada = Console.ReadLine();
         }
-        while (entrada==""){
+        while (entrada=="" || entrada==" "){
             Console.WriteLine("El nombre no puede estar vacio.");
             Console.WriteLine("Entre nombre:");
             entrada = Console.ReadLine();
@@ -46,9 +46,9 @@ public class FabricaPersonaje{
             Console.WriteLine("Entre apodo:");
             entrada = Console.ReadLine();
         }
-        while (entrada==""){
+        while (entrada=="" || entrada==" "){
             Console.WriteLine("El apodo no puede estar vacio.");
-            Console.WriteLine("Entre nombre:");
+            Console.WriteLine("Entre apodo:");
             entrada = Console.ReadLine();
         }
         while (entrada.Length>10){
@@ -129,40 +129,37 @@ public class FabricaPersonaje{
         Enem.Atributos.Nivel = nivel;
         switch (Enem.Datos.Tipo){
             case "Dragon":
-            Enem.Atributos.Caption = @"    
-                 /\____/\/\/\/\/\
-                / °    o  ///  
-                vvvvv¨¨\  \\\ D_D_D
-                vvvvv../ /_/_/_/_
-                \________/";
+            Enem.Atributos.Caption = @"                                     /\____/\/\/\/\/\
+                                    / °    o  ///  
+                                    vvvvv¨¨\  \\\ D_D_D
+                                    vvvvv../ /_/_/_/_
+                                    \________/";
             Enem.Atributos.Salud = 1000 + Enem.Atributos.Nivel*100;
             Enem.Atributos.Ataque = 100 + Enem.Atributos.Nivel*10;
             Enem.Atributos.Defensa = 100 + Enem.Atributos.Nivel*5;
             break;
             case "No Muerto":
-            Enem.Atributos.Caption  = @"
-                _/_/_/_/_
-               |__      |
-                _°|    _|
-                \    _/_______
-                 nn¨¨\\__|__|_
-                 nn..//
-                 \___/";
+            Enem.Atributos.Caption  = @"                                   _/_/_/_/_
+                                  |__      |
+                                   _°|    _|
+                                   \    _/_______
+                                   nn¨¨\\__|__|_
+                                    nn..//
+                                    \___/";
             Enem.Atributos.Salud = 800 + Enem.Atributos.Nivel*100;
             Enem.Atributos.Ataque = 80 + Enem.Atributos.Nivel*10;
             Enem.Atributos.Defensa = 90 + Enem.Atributos.Nivel*5;
             break;
             case "Demonio":
-            Enem.Atributos.Caption  = @"
-                 /\      /\
-               _/ /      \ \
-              / \ \______/ /\
-              \ o    o  /_/ /
-              / ..       __ \___ 
-              \VVVVVVVV\/   / /
-                   |___|  __\_\_
-                 /VVVVV\ /    
-                 \______/";
+            Enem.Atributos.Caption  = @"                                    /\      /\
+                                  _/ /      \ \
+                                 / \ \______/ /\
+                                 \ o    o  /_/ /
+                                 / ..       __ \___ 
+                                 \VVVVVVVV\/   / /
+                                     |___|  __\_\_
+                                    /VVVVV\ /    
+                                    \______/";
             Enem.Atributos.Salud = 900 + Enem.Atributos.Nivel*100;
             Enem.Atributos.Ataque = 90 + Enem.Atributos.Nivel*10;
             Enem.Atributos.Defensa = 80 + Enem.Atributos.Nivel*5;
@@ -180,11 +177,14 @@ public class FabricaPersonaje{
         return(Edad);
     }
     public static bool EsPalabra(string palabra){
-        foreach (char letra in palabra){
-            if (!char.IsLetterOrDigit(letra)){
-                return(false);
+        foreach (char letra in palabra){ 
+            /*if (!char.IsLetterOrDigit(letra)){
+                return(false);  
             }else if (char.IsDigit(letra)){
-                    return(false);
+                return(false);
+            }*/
+            if (!char.IsLetter(letra) && letra != 'ñ' && letra != 'Ñ'){
+                return(false);  
             }
         }
         return(true);

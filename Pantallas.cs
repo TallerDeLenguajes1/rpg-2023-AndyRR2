@@ -60,12 +60,12 @@ public class Pantallas{
         int costo1 = pm*35/100;
         int costo2 = pm*20/100;
         int danio = (Pj.Atributos.Ataque + Pj.Atributos.Inteligencia*10 + Pj.Atributos.Destreza*5 + Pj.Atributos.Fuerza);
-        Console.WriteLine("╔══════════════════════════════════════════════════════╗");
-        Console.WriteLine("║ "+Enem.Datos.Nombre.PadRight(29)+" Salud: "+Enem.Atributos.Salud.ToString().PadRight(4)+"/"+Epv.ToString().PadRight(4)+"       ║");
-        Console.WriteLine("║ Nivel : "+Enem.Atributos.Nivel.ToString().PadRight(2) + "                                           ║");
-        Console.WriteLine("╚══════════════════════════════════════════════════════╝");
+        Console.WriteLine("╔════════════════════════════════════════════════════════╗");
+        Console.WriteLine("║ "+Enem.Datos.Nombre.PadRight(29)+" Salud: "+Enem.Atributos.Salud.ToString().PadRight(4)+"/"+Epv.ToString().PadRight(4)+"         ║");
+        Console.WriteLine("║ Nivel : "+Enem.Atributos.Nivel.ToString().PadRight(2) + "                                             ║");
+        Console.WriteLine("╚════════════════════════════════════════════════════════╝");
         Console.WriteLine(Enem.Atributos.Caption.PadLeft(10)+ " ");
-        Console.WriteLine("-----------------------------------------------------");
+        Console.WriteLine(@"----------------------------------------------------------");
         Console.WriteLine(Pj.Atributos.Caption.PadRight(10) + "   ");
         Console.WriteLine("╔════════════════════════════════════════════════════════╗");
         Console.WriteLine("║ ╔═══════════════╗     ╔═══════════════╗  "+Pj.Datos.Apodo.PadRight(10)+"    ║");

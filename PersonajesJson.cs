@@ -28,8 +28,8 @@ public class PersonajesJson
         FileStream archivo = new FileStream(ruta,FileMode.Create);
         StreamWriter sw = new StreamWriter(archivo);
         JsonSerializerOptions options = new JsonSerializerOptions{
-            WriteIndented = true,
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            WriteIndented = true,// para que se serialize con sangria y estructurado y no en linea recta
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping//para que reconozca bien los caracteres especiales
         };
         var serializado = JsonSerializer.Serialize(Pj,options);
         using(sw){
