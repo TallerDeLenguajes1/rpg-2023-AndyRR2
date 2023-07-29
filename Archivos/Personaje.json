@@ -1,21 +1,32 @@
 {
   "Datos": {
-    "Nombre": "Crisian",
-    "Apodo": "matador",
-    "Fechanac": "1999-01-15T00:00:00",
-    "Edad": 24
+    "Nombre": "andy",
+    "Apodo": "juan",
+    "Fechanac": "2000-01-01T00:00:00",
+    "Edad": 23
   },
   "Atributos": {
-    "Caption": "    \r\n                   Ø/\\,\r\n                 \\/█\r\n                 _/ \\_",
-    "Tipo": "Asesino",
-    "Inteligencia": 23,
-    "Destreza": 32,
-    "Fuerza": 14,
-    "Nivel": 4,
-    "Defensa": 1563,
-    "Ataque": 1933,
-    "Salud": 403,
-    "Mana": 540,
-    "Exp": 50600
+    "Caption": "        \r\n                \\  @\r\n                 \\/█|██|\r\n                 _/ \\_",
+    "Tipo": "Guerrero",
+    "Inteligencia": 10,
+    "Destreza": 20,
+    "Fuerza": 30,
+    "Nivel": 1,
+    "Defensa": 540,
+    "Ataque": 490,
+    "Salud": 1630,
+    "Mana": 500,
+    "Exp": 0
+  },
+  "Equipamiento": {
+    "Casco": "Helm of Telepathy",
+    "Armadura": "Glamoured Studded Leather Armor",
+    "Guantes": "Gauntlets of Dragon Scales",
+    "Cinturon": "Belt of Giant Strength",
+    "Botas": "Boots of Levitation",
+    "Anillo": "Ring of Invisibility",
+    "Amuleto": "Amulet of Health",
+    "ManoIzq": "Spellguard Shield",
+    "ManoDer": "Dancing Sword"
   }
 }

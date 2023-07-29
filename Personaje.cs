@@ -3,6 +3,7 @@ using System;
 public class Personaje{
     public datos Datos{get;set;}
     public atributos Atributos {get;set;}
+    public equipamiento Equipamiento {get;set;}
     public class datos{
         private string nombre;
         private string apodo;
@@ -37,5 +38,26 @@ public class Personaje{
         public int Salud { get => salud; set => salud = value; }
         public int Mana { get => mana; set => mana = value; }
         public int Exp { get => exp; set => exp = value; }
+    }
+    public class equipamiento{
+        private string casco;
+        private string armadura;
+        private string guantes;
+        private string cinturon;
+        private string botas;
+        private string anillo;
+        private string amuleto;
+        private string manoIzq;
+        private string manoDer;
+
+        public string Casco { get => casco; set => casco = value; }
+        public string Armadura { get => armadura; set => armadura = value; }
+        public string Guantes { get => guantes; set => guantes = value; }
+        public string Cinturon { get => cinturon; set => cinturon = value; }
+        public string Botas { get => botas; set => botas = value; }
+        public string Anillo { get => anillo; set => anillo = value; }
+        public string Amuleto { get => amuleto; set => amuleto = value; }
+        public string ManoIzq { get => manoIzq; set => manoIzq = value; }
+        public string ManoDer { get => manoDer; set => manoDer = value; }
     }
 }

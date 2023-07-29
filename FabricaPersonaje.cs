@@ -4,8 +4,12 @@ using EspacioPersonaje;
 using EspacioEnemigos;
 using EspacioConstantes;
 using EspacioMecanicas;
+using EspacioTomarApi;
+
 public class FabricaPersonaje{
-    public Personaje CrearPersonaje(Personaje Pj){
+    public Personaje CrearPersonaje(Personaje Pj, TomarApi tomaApi){
+        Random random = new Random();
+        Pj.Equipamiento = new Personaje.equipamiento();
         string entrada,fech;
         bool result;
         int dia, mes, year, clase;
@@ -97,6 +101,37 @@ public class FabricaPersonaje{
         fecha = DateTime.Parse(fech);
         Pj.Datos.Fechanac=fecha;
         //arma fecha -fin
+        //arma Equipamiento
+        int aleatorio=0;
+        aleatorio = random.Next(tomaApi.ListaCascos.Count);
+        Pj.Equipamiento.Casco=tomaApi.ListaCascos[aleatorio];
+        tomaApi.ListaCascos.RemoveAt(aleatorio);
+
+        aleatorio = random.Next(tomaApi.ListaArmaduras.Count);
+        Pj.Equipamiento.Armadura=tomaApi.ListaArmaduras[aleatorio];
+        tomaApi.ListaArmaduras.RemoveAt(aleatorio);
+
+        aleatorio = random.Next(tomaApi.ListaGuantes.Count);
+        Pj.Equipamiento.Guantes=tomaApi.ListaGuantes[aleatorio];
+        tomaApi.ListaGuantes.RemoveAt(aleatorio);
+
+        aleatorio = random.Next(tomaApi.ListaCinturones.Count);
+        Pj.Equipamiento.Cinturon=tomaApi.ListaCinturones[aleatorio];
+        tomaApi.ListaCinturones.RemoveAt(aleatorio);
+
+        aleatorio = random.Next(tomaApi.ListaBotas.Count);
+        Pj.Equipamiento.Botas=tomaApi.ListaBotas[aleatorio];
+        tomaApi.ListaBotas.RemoveAt(aleatorio);
+
+        aleatorio = random.Next(tomaApi.ListaAnillos.Count);
+        Pj.Equipamiento.Anillo=tomaApi.ListaAnillos[aleatorio];
+        tomaApi.ListaAnillos.RemoveAt(aleatorio);
+
+        aleatorio = random.Next(tomaApi.ListaAmuletos.Count);
+        Pj.Equipamiento.Amuleto=tomaApi.ListaAmuletos[aleatorio];
+        tomaApi.ListaAmuletos.RemoveAt(aleatorio);
+        
+        //arma Equipamiento-fin
         Pj.Datos.Edad=CalcEdad(fecha);
         switch (clase){
             case 1: Pj.Atributos.Fuerza = 30;Pj.Atributos.Destreza=20;Pj.Atributos.Inteligencia=10;Pj.Atributos.Tipo="Guerrero";
@@ -104,22 +139,89 @@ public class FabricaPersonaje{
                 \  @
                  \/█|██|
                  _/ \_";
-            break;
+                 aleatorio = random.Next(tomaApi.ListaEscudos.Count);
+                 Pj.Equipamiento.ManoIzq=tomaApi.ListaEscudos[aleatorio];
+                 tomaApi.ListaEscudos.RemoveAt(aleatorio);
+
+                 aleatorio = random.Next(tomaApi.ListaEspadas.Count);
+                 Pj.Equipamiento.ManoDer=tomaApi.ListaEspadas[aleatorio];
+                 tomaApi.ListaEspadas.RemoveAt(aleatorio);
+                 break;
             case 2: Pj.Atributos.Fuerza = 10;Pj.Atributos.Destreza=20;Pj.Atributos.Inteligencia=30;Pj.Atributos.Tipo="Mago";
             Pj.Atributos.Caption = @"       
                      ▄
                  \Ô__|
                  /█\ |
-                 ! !"
-            ;break;
+                 ! !";
+                 aleatorio = random.Next(tomaApi.ListaBaculos.Count);
+                 Pj.Equipamiento.ManoIzq=tomaApi.ListaBaculos[aleatorio];
+                 tomaApi.ListaBaculos.RemoveAt(aleatorio);
+
+                 aleatorio = random.Next(tomaApi.ListaCristales.Count);
+                 Pj.Equipamiento.ManoDer=tomaApi.ListaCristales[aleatorio];
+                 tomaApi.ListaCristales.RemoveAt(aleatorio);
+                 break;
             case 3: Pj.Atributos.Fuerza = 10;Pj.Atributos.Destreza=30;Pj.Atributos.Inteligencia=20;Pj.Atributos.Tipo="Asesino";
             Pj.Atributos.Caption = @"    
                    Ø/\,
                  \/█
-                 _/ \_"
-            ;break;
+                 _/ \_";
+                 aleatorio = random.Next(tomaApi.ListaDagas.Count);
+                 Pj.Equipamiento.ManoIzq=tomaApi.ListaDagas[aleatorio];
+                 tomaApi.ListaDagas.RemoveAt(aleatorio);
+
+                 aleatorio = random.Next(tomaApi.ListaDagas.Count);
+                 Pj.Equipamiento.ManoDer=tomaApi.ListaDagas[aleatorio];
+                 tomaApi.ListaDagas.RemoveAt(aleatorio);
+                 break;
         }
         return(Pj);
+    }
+    public string DropearItem(Personaje Pj,TomarApi tomarApi){        
+        Random random = new Random();
+        int NumList = random.Next(0,6);
+        int NumNombre=0;
+        int cantidad=0;
+        string nombre=null;
+        switch (NumList)
+        {
+            case 0: cantidad = tomarApi.ListaCascos.Count;
+                    NumNombre = random.Next(cantidad);
+                    nombre = tomarApi.ListaCascos[NumNombre];
+                    Pj.Equipamiento.Casco = nombre ;
+            break;
+            case 1: cantidad = tomarApi.ListaArmaduras.Count;
+                    NumNombre = random.Next(cantidad);
+                    nombre = tomarApi.ListaArmaduras[NumNombre];
+                    Pj.Equipamiento.Armadura = nombre ;
+            break;
+            case 2: cantidad = tomarApi.ListaGuantes.Count;
+                    NumNombre = random.Next(cantidad);
+                    nombre = tomarApi.ListaGuantes[NumNombre];
+                    Pj.Equipamiento.Guantes = nombre ;
+            break;
+            case 3: cantidad = tomarApi.ListaCinturones.Count;
+                    NumNombre = random.Next(cantidad);
+                    nombre = tomarApi.ListaCinturones[NumNombre];
+                    Pj.Equipamiento.Cinturon = nombre ;
+            break;
+            case 4: cantidad = tomarApi.ListaBotas.Count;
+                    NumNombre = random.Next(cantidad);
+                    nombre = tomarApi.ListaBotas[NumNombre];
+                    Pj.Equipamiento.Botas = nombre ;
+            break;
+            case 5: cantidad = tomarApi.ListaAnillos.Count;
+                    NumNombre = random.Next(cantidad);
+                    nombre = tomarApi.ListaAnillos[NumNombre];
+                    Pj.Equipamiento.Anillo = nombre ;
+            break;
+            case 6: cantidad = tomarApi.ListaAmuletos.Count;
+                    NumNombre = random.Next(cantidad);
+                    nombre = tomarApi.ListaAmuletos[NumNombre];
+                    Pj.Equipamiento.Amuleto = nombre ;
+            break;
+        }
+        return(nombre);
     }
     public Enemigos GenerarEnemigo(Enemigos Enem, int nivel){
         Constantes Const = new Constantes(); 
@@ -183,7 +285,7 @@ public class FabricaPersonaje{
             }else if (char.IsDigit(letra)){
                 return(false);
             }*/
-            if (!char.IsLetter(letra) && letra != 'ñ' && letra != 'Ñ'){
+            if (!char.IsLetter(letra)){
                 return(false);  
             }
         }
