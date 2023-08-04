@@ -1,8 +1,8 @@
 {
   "Valores": {
-    "PjPvMaximo": 1630,
-    "PjPmMaximo": 500,
-    "EnemPvMaximo": 900,
-    "RequierExp": 2000
+    "PjPvMaximo": 3160,
+    "PjPmMaximo": 1800,
+    "EnemPvMaximo": 5500,
+    "RequierExp": 21900
   }
 }
